@@ -3,14 +3,14 @@
 }
 
 .product_table th {
-    background-color: brown;
-    color: wheat;
+    background-color: beige;
+    color: black;
     font-weight: bolder;
 }
 
 .product_table tbody td{
-    border-left: 1px solid #555555;
-    border-bottom: 1px solid #555555;
+    border-left: 1px solid green;
+    border-bottom: 1px solid green;
 }
 
 .product_table tfoot {
