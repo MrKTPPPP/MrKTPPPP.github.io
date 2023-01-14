@@ -57,12 +57,29 @@ function deleteCustomers(index){
 function loadData(){
     let allRows = ""
     let datatable = document.getElementById("data-table")
-    for (let p in customers){
-        let cellName = `<td><img class='icon' src='Delete Icon.png' style='width: 20px' onclick='deleteCustomers("${p}")'> ` + customers[p].name + "</td>"
-        let cellEmail = '<td class="text-right">' + customers[p].email + "</td>"
-        let cellNumber = '<td class="text-right">' + customers[p].phone + "</td>"
-        let row = `<tr>${cellName}${cellEmail}${cellNumber}</tr>`
-        allRows += row
+    for (let p in products) {
+        let row = document.createElement("tr")
+        let productName = document.createElement("td")
+        productName.innerHTML = products[p].name
+
+        let quantity = document.createElement("td")
+        quantity.innerHTML = products[p].quantity
+        quantity.classList.add("text-right")
+
+        let ppu = document.createElement("td")
+        ppu.innerHTML = products[p].ppu
+        ppu.classList.add("text-right")
+
+        let total = document.createElement("td")
+        total.innerHTML = products[p].ppu * products[p].quantity
+        total.classList.add("text-right")
+        gross += products[p].ppu * products[p].quantity
+
+    row.appendChild(productName)
+    row.appendChild(quantity)
+    row.appendChild(ppu)
+    row.appendChild(total)
+    productList.appendChild(row)
     }
     $('#databody').html(allRows)
     datatable.append(customers[p])

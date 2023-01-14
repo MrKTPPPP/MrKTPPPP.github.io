@@ -60,3 +60,5 @@ function loadData() {
     document.getElementById("net").innerHTML = net.toFixed(2)
 
 }
+
+
